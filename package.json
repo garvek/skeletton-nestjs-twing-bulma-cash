@@ -1,9 +1,8 @@
 {
-  "name": "framework",
+  "name": "skeletton-nestjs-twing-bulma-cash",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
+  "description": "Skeletton for a basic application with NestJS, Twing, Bulma and Cash",
+  "author": "Garvek",
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
