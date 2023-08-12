@@ -2,11 +2,19 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}title{% endblock %}</title>
+    <link rel="stylesheet" href="dist/app.css">
+    <link rel="icon" type="image/png" href="favicon.png" />
   </head>
   <body>
-    {% block body %}
-    {% endblock %}
+    {% include "menu.html.twig" %}
+    <section class="section">
+      <div class="container">
+      {% block body %}
+      {% endblock %}
+      </div>
+    </section>
     <script src="dist/app.js"></script>
   </body>
 </html>
