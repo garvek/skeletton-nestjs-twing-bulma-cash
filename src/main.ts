@@ -9,6 +9,8 @@ async function bootstrap() {
   const loader = new TwingLoaderFilesystem('templates');
   const twing = new TwingEnvironment(loader, { strict_variables: true });
 
+  app.useStaticAssets(path.join(__dirname, '..', 'public'));
+
   app.engine('twig', (filePath, options, callback) => {
     twing
       .render(path.relative('templates', filePath), options)
@@ -18,6 +20,7 @@ async function bootstrap() {
   });
   app.setBaseViewsDir('templates');
   app.setViewEngine('twig');
+
   await app.listen(3000);
 }
 bootstrap();
