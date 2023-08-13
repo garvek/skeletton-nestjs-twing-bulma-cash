@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+{% block title %}Error {{ status }}{% endblock %}
+{% block body %}
+    <p>
+        <b>Error {{ status }}</b>
+    </p>
+    <p>
+        <i>{{ path }}</i>
+    </p>
+{% endblock %}
