@@ -1,19 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Render } from '@nestjs/common';
 import { AppService } from './app.service';
-import { TwingService } from './twing/twing.service';
 
 @Controller()
 export class AppController {
-  constructor(
-    private readonly appService: AppService,
-    private readonly twingService: TwingService,
-  ) {}
+  constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): Promise<string> {
-    return this.twingService.render(
-      'hello.html.twig',
-      this.appService.getHello(),
-    );
+  @Render('hello.html.twig')
+  getHello() {
+    return this.appService.getHello();
   }
 }
